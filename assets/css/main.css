@@ -94,6 +94,7 @@ body {
       "proj1"
       "proj2";
   }
+  .hero-name { font-size: 36px; }
 }
 
 .card {
