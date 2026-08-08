@@ -5,7 +5,7 @@ const { data: books } = await useAsyncData('books', () =>
 </script>
 
 <template>
-  <div class="content-grid">
+  <div class="content-grid content-grid-4">
     <MediaCard
       v-for="book in books"
       :key="book.path"

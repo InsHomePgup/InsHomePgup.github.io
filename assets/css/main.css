@@ -291,6 +291,9 @@ body {
   gap: 14px;
   grid-template-columns: repeat(3, 1fr);
 }
+.content-grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
 @media (max-width: 860px) {
   .content-grid { grid-template-columns: 1fr; }
 }
