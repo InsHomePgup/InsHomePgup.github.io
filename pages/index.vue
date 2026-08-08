@@ -9,9 +9,15 @@ const skills = [
 <template>
   <div class="grid">
     <div class="card card-hero">
+      <div class="hero-top">
+        <img class="hero-avatar" src="/img/avatar.jpg" alt="Abra X" />
+        <div>
+          <div class="hero-eyebrow">Full-Stack Engineer</div>
+          <div class="hero-name">Abra X</div>
+          <div class="hero-birthday">1997.08</div>
+        </div>
+      </div>
       <div>
-        <div class="hero-eyebrow">Full-Stack Engineer</div>
-        <div class="hero-name">Abra X</div>
         <div class="hero-tagline">从前端到后端，从像素到数据库，独立打磨完整产品。</div>
       </div>
       <div class="hero-stack">Vue · React · NestJS · PostgreSQL · Redis · Docker</div>

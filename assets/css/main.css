@@ -39,8 +39,6 @@
 body {
   background: var(--bg);
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
   padding: 48px 20px;
   -webkit-font-smoothing: antialiased;
   font-family: 'DM Sans', sans-serif;
@@ -49,6 +47,7 @@ body {
 .page {
   width: 100%;
   max-width: 1100px;
+  margin: 0 auto;
 }
 
 /* ---------- Nav ---------- */
@@ -108,6 +107,7 @@ body {
   justify-content: center;
   position: relative;
   overflow: hidden;
+  min-width: 0;
 }
 
 .label {
@@ -142,6 +142,28 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   margin-bottom: 14px;
+}
+.hero-top {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+.hero-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #000;
+  flex-shrink: 0;
+}
+.hero-top .hero-eyebrow { margin-bottom: 4px; }
+.hero-birthday {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-tertiary);
+  margin-top: 4px;
 }
 .hero-name {
   font-family: 'Sora', sans-serif;
@@ -210,6 +232,7 @@ body {
   font-weight: 500;
   color: var(--text-primary);
   text-align: right;
+  overflow-wrap: anywhere;
 }
 
 /* ---------- Projects ---------- */

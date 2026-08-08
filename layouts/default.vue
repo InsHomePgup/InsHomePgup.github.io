@@ -1,7 +1,6 @@
 <script setup lang="ts">
 const navLinks = [
-  { to: '/', label: 'Home' },
-  { to: '/movies', label: '影音' },
+  { to: '/', label: '首页' },
   { to: '/books', label: '图书' },
   { to: '/sports', label: '运动' },
   { to: '/life', label: '生活' },

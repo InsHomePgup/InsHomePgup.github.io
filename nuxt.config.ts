@@ -22,7 +22,7 @@ export default defineNuxtConfig({
   },
   nitro: {
     prerender: {
-      routes: ['/', '/movies', '/books', '/sports', '/life'],
+      routes: ['/', '/books', '/sports', '/life'],
       crawlLinks: true,
     },
   },
