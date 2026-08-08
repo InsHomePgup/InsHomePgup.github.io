@@ -1,0 +1,356 @@
+:root {
+  --bg: #f5f5f7;
+  --card: #ffffff;
+  --text-primary: #1d1d1f;
+  --text-secondary: #86868b;
+  --text-tertiary: #aeaeb2;
+  --pill-bg: #f0f0f2;
+  --pill-text: #6e6e73;
+  --shadow: 0 1px 8px rgba(0,0,0,0.06);
+  --border-hairline: rgba(0,0,0,0.04);
+
+  --blue: #0071e3;
+  --cyan: #00b4d8;
+  --green: #34d399;
+  --coral: #ff6b6b;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #000000;
+    --card: #1a1a1a;
+    --text-primary: #f5f5f7;
+    --text-secondary: #98989d;
+    --text-tertiary: #636366;
+    --pill-bg: rgba(255,255,255,0.08);
+    --pill-text: #aeaeae;
+    --shadow: 0 1px 10px rgba(0,0,0,0.4);
+    --border-hairline: rgba(255,255,255,0.06);
+
+    --blue: #2997ff;
+    --cyan: #64d2ff;
+    --green: #30d158;
+    --coral: #ff6b6b;
+  }
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 48px 20px;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.page {
+  width: 100%;
+  max-width: 1100px;
+}
+
+/* ---------- Nav ---------- */
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.nav-link {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--pill-text);
+  background: var(--pill-bg);
+  padding: 8px 18px;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: opacity 0.15s ease, color 0.15s ease, background 0.15s ease;
+}
+.nav-link:hover { opacity: 0.7; }
+.nav-link.router-link-exact-active {
+  color: #ffffff;
+  background: var(--blue);
+}
+
+.grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    "hero  hero  skills  skills"
+    "hero  hero  contact contact"
+    "proj1 proj1 proj2   proj2";
+}
+
+@media (max-width: 860px) {
+  .grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "hero"
+      "skills"
+      "contact"
+      "proj1"
+      "proj2";
+  }
+}
+
+.card {
+  background: var(--card);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-hairline);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+  margin-bottom: 14px;
+}
+
+/* ---------- Hero ---------- */
+.card-hero {
+  grid-area: hero;
+  padding: 36px;
+  justify-content: space-between;
+  min-height: 260px;
+}
+.card-hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--blue), var(--cyan), var(--green));
+}
+.hero-eyebrow {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--blue);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 14px;
+}
+.hero-name {
+  font-family: 'Sora', sans-serif;
+  font-size: 52px;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+.hero-tagline {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-top: 14px;
+  line-height: 1.5;
+  max-width: 46ch;
+}
+.hero-stack {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  margin-top: 22px;
+  letter-spacing: 0.01em;
+}
+
+/* ---------- Skills ---------- */
+.card-skills { grid-area: skills; }
+.pills { display: flex; flex-wrap: wrap; gap: 8px; }
+.pill {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--pill-text);
+  background: var(--pill-bg);
+  padding: 6px 14px;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+/* ---------- Contact ---------- */
+.card-contact { grid-area: contact; }
+.contact-list { display: flex; flex-direction: column; gap: 12px; }
+.contact-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  text-decoration: none;
+  padding: 4px 0;
+  border-bottom: 1px solid var(--border-hairline);
+  transition: opacity 0.15s ease;
+}
+.contact-row:last-child { border-bottom: none; }
+.contact-row:hover { opacity: 0.6; }
+.contact-key {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+.contact-val {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  text-align: right;
+}
+
+/* ---------- Projects ---------- */
+.card-project { gap: 4px; }
+.card-proj1 { grid-area: proj1; }
+.card-proj2 { grid-area: proj2; }
+.project-eyebrow {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+}
+.project-title {
+  font-family: 'Sora', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  margin-bottom: 8px;
+}
+.project-desc {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+.project-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px; }
+.project-tag {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--pill-text);
+  background: var(--pill-bg);
+  padding: 4px 10px;
+  border-radius: 100px;
+}
+.project-link {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  width: fit-content;
+}
+.project-link:hover { opacity: 0.7; }
+
+/* ---------- Generic content grid (movies/books/sports) ---------- */
+.content-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(3, 1fr);
+}
+@media (max-width: 860px) {
+  .content-grid { grid-template-columns: 1fr; }
+}
+
+.media-type {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--blue);
+  margin-bottom: 10px;
+}
+.media-title {
+  font-family: 'Sora', sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  margin-bottom: 6px;
+}
+.media-sub {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+.media-note {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-top: 10px;
+}
+
+/* ---------- Sports ---------- */
+.sport-card {
+  align-items: center;
+  flex-direction: row;
+  gap: 16px;
+  padding: 24px 28px;
+}
+.sport-icon {
+  font-size: 28px;
+  color: var(--blue);
+}
+.sport-name {
+  font-family: 'Sora', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* ---------- Life timeline ---------- */
+.timeline { display: flex; flex-direction: column; gap: 14px; }
+.timeline-item {
+  flex-direction: row;
+  align-items: baseline;
+  gap: 20px;
+  padding: 22px 28px;
+}
+.timeline-date {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  white-space: nowrap;
+  min-width: 90px;
+}
+.timeline-text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+.footer {
+  text-align: center;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-tertiary);
+  margin-top: 28px;
+}
