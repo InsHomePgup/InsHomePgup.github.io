@@ -10,6 +10,7 @@ export default defineContentConfig({
         type: z.enum(['电影', '剧集', '音乐']),
         year: z.string().optional(),
         note: z.string().optional(),
+        cover: z.string().optional(),
         placeholder: z.boolean().optional(),
       }),
     }),
@@ -19,6 +20,7 @@ export default defineContentConfig({
       schema: z.object({
         title: z.string(),
         author: z.string(),
+        cover: z.string().optional(),
       }),
     }),
     sports: defineCollection({

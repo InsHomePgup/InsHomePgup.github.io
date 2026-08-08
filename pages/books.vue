@@ -11,7 +11,7 @@ const { data: books } = await useAsyncData('books', () =>
       :key="book.path"
       type="图书"
       :title="book.title"
-      :sub="book.author"
+      :cover="book.cover"
     />
   </div>
 </template>

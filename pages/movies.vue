@@ -11,8 +11,7 @@ const { data: movies } = await useAsyncData('movies', () =>
       :key="movie.path"
       :type="movie.type"
       :title="movie.title"
-      :sub="movie.year"
-      :note="movie.note"
+      :cover="movie.cover"
     />
   </div>
 </template>

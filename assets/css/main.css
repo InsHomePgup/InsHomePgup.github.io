@@ -272,36 +272,28 @@ body {
   .content-grid { grid-template-columns: 1fr; }
 }
 
-.media-type {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 11px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--blue);
-  margin-bottom: 10px;
+.media-card { padding: 0; overflow: hidden; }
+.media-cover {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  display: block;
+  background: var(--pill-bg);
+}
+.media-cover-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  color: var(--text-tertiary);
 }
 .media-title {
   font-family: 'Sora', sans-serif;
-  font-size: 19px;
+  font-size: 16px;
   font-weight: 700;
   color: var(--text-primary);
   letter-spacing: -0.01em;
-  margin-bottom: 6px;
-}
-.media-sub {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--text-secondary);
-}
-.media-note {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 13px;
-  font-weight: 400;
-  color: var(--text-secondary);
-  line-height: 1.5;
-  margin-top: 10px;
+  padding: 16px 18px;
 }
 
 /* ---------- Sports ---------- */
